@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    link(rel="shortcut icon" href="/favicon.ico")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
+    meta(name="theme-color" content="#000000")
+    title #{title}
+    link(rel="stylesheet" href="styles/base.css")
+    link(rel="stylesheet" href="styles/bootstrap.min.css")
+    block css
+  body
+    div#root
+      block base-content
+
+  

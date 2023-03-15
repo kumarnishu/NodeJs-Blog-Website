@@ -1,0 +1,27 @@
+div.navbar-container.d-flex.justify-content-between.bg-dark.text-white
+    div.logo
+        a.d-flex.align-items-center(href="/") 
+            img(src="images/icons/icons8-blogger-48.png" alt="website logo" height="48" width="48")
+            span.brand-name.fs-3 Blogger
+    div.menu.d-none.d-md-flex.align-items-center.justify-content-end
+        a(href="/technology") technology 
+        a(href="/bollywood") bollywood 
+        a(href="/softwares") softwares 
+        a(href="/operating system") operating system 
+        a(href="/games") games 
+    div.bars-icon-container.d-md-none(onClick="handleMenu(this)")
+        div.bar1
+        div.bar2
+        div.bar3
+div#mobile-menu.mobile-menu.d-flex.flex-column.d-none.d-md-none.align-items-center.justify-content-end
+    a(href="/technology") technology 
+    a(href="/bollywood") bollywood 
+    a(href="/softwares") softwares 
+    a(href="/operating system") operating system 
+    a(href="/games") games 
+script.
+    function handleMenu(x){
+        let menu=document.getElementById("mobile-menu")
+        menu.classList.toggle("d-none");
+        x.classList.toggle("change");
+    }
