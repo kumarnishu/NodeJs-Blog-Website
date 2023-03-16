@@ -1,3 +1,32 @@
+ul.breadcrumb {
+    margin: 0.2rem;
+    padding: 10px 16px;
+    list-style: none;
+    background-color: rgb(244, 239, 239);;
+}
+
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+
+
+ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+
 .logo a {
     text-decoration: none;
 }
@@ -16,7 +45,7 @@
 .bars-icon-container {
     display: inline-block;
     cursor: pointer;
-    color:white;
+    color: white;
     padding: 5px;
 }
 
@@ -25,7 +54,7 @@
 .bar3 {
     width: 35px;
     height: 5px;
-    background-color:white;
+    background-color: white;
     margin: 6px 0;
     transition: 0.4s;
 }
@@ -48,9 +77,14 @@
 }
 
 .mobile-menu {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.8);
 }
-
+.read-more{
+    text-decoration: none;
+}
+.read-more:hover{
+    font-weight: 600;
+}
 .mobile-menu a {
     display: block;
     width: 100%;
@@ -64,7 +98,6 @@
 .mobile-menu a:hover {
     background-color: rgba(0, 0, 0, 0.6);
 }
-
 
 .about-us p {
     text-align: justify;
@@ -112,10 +145,12 @@
     max-width: 300px;
     overflow: hidden;
 }
+
 .avatar .author {
     font: size 1rem;
     font-weight: 600;
 }
+
 .avatar .time {
     font-size: 0.7rem;
     font-weight: 500;
@@ -135,4 +170,15 @@
     color: lightgrey;
     text-align: center;
     padding: 10px;
+}
+
+iframe {
+    width: 100%;
+    min-height: 600px;
+}
+
+@media all and (max-width:450px) {
+    iframe {
+        min-height: 300px;
+    }
 }
