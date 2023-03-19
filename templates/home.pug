@@ -1,12 +1,15 @@
 extends base
+
 block css 
-    link(rel="stylesheet" href="styles/home.css")
+    link(rel="stylesheet" href="/styles/home.css")
 block base-content
     div.container-fluid
         div.row.w-100
             div.col-sm-12.col-md-8
                 div.container.text-start.fs-6 Popular Posts
-                include partials/home/posts-popular.pug 
+                include partials/post.pug 
+                include partials/post.pug 
             div.col-sm-12.col-md-4
                 div.container.text-start.fs-6 Latest Posts
-                include partials/home/posts-latest.pug 
+                include partials/post.pug 
+

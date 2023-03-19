@@ -34,7 +34,10 @@ ul.breadcrumb li a:hover {
 .logo .brand-name {
     color: white;
 }
-
+.img-fluid{
+    background-position: center;
+    object-fit: cover;
+}
 .menu a {
     color: white;
     text-decoration: none;
@@ -99,8 +102,11 @@ ul.breadcrumb li a:hover {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
+.title,.subtitle{
+    word-break: break-all;
+}
 .about-us p {
-    text-align: justify;
+    word-break:break-all;
     font-size: 1.1rem;
     font-weight: 400;
     word-spacing: 10;
@@ -157,7 +163,7 @@ ul.breadcrumb li a:hover {
 }
 
 .post-image {
-    max-height: 600px;
+    max-height: 400px;
 }
 
 .footer h1 {
@@ -174,7 +180,7 @@ ul.breadcrumb li a:hover {
 
 iframe {
     width: 100%;
-    min-height: 600px;
+    min-height: 300px;
 }
 
 @media all and (max-width:450px) {

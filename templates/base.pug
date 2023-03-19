@@ -5,15 +5,22 @@ html
     link(rel="shortcut icon" href="/favicon.ico")
     meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
     meta(name="theme-color" content="#000000")
-    title #{title}
-    link(rel="stylesheet" href="styles/base.css")
-    link(rel="stylesheet" href="styles/bootstrap.min.css")
-    block css
+    meta(property="og:url" content="https://www.your-domain.com/your-page.html")
+    meta(property="og:type" content="website")
+    meta(property="og:title" content="Your Website Title")
+    meta(property="og:description" content="Your description")
+    meta(property="og:image" content="https://www.your-domain.com/path/image.jpg")
+  title #{title}
+  link(rel="stylesheet" href="/styles/base.css")
+  link(rel="stylesheet" href="/styles/bootstrap.min.css")
+  block css
   body
     div#root
-    include partials/home/navbar.pug
+    include partials/navbar.pug
     block breadcrumb
     block base-content
-    include partials/home/footer.pug
+    div#fb-root
+      script( async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v16.0" nonce="O1MQya7p")
+    include partials/footer.pug
 
 

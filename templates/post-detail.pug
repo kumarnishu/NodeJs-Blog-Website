@@ -1,32 +1,42 @@
 extends base
 
 block css 
-    link(rel="stylesheet" href="styles/home.css")
+    link(rel="stylesheet" href="/styles/home.css")
 block breadcrumb
     ul.breadcrumb
         li
-            a(href="#") Home
+            a(href="/") Home
         li Post-Detail      
 block base-content
-    div.post.border.rounded.p-2
-    h1.title How to write an Express App
-    div.avatar.d-flex
-        img.me-2.p-1.border.rounded-circle(src="images/avatar.jpeg" alt="avatar" width="50" loading="lazy" height="50"  )
-        div.d-flex.flex-column
-            span.author Nishu kumar
-            span.time 20 Mar 2022
-    hr.py-1
-    h4.subtitle Express is a node js web application framework that provides broad features for building web and mobile applications. 
-    div.post-image.d-flex.pb-2
-        img.img-fluid(src="images/post-image.jpg" alt="post-image" loading="lazy")
-    p.paragraph Prevent long strings of text from breaking your components’ layout by using .text-break to set word-wrap: break-word and word-break: break-word. We use word-wrap instead of the more common overflow-wrap for wider browser support, and add the deprecated word-break: break-word to avoid issues with flex containers.
-    div.video-container(contextmenu="false")
-        video.img-fluid.w-100(controls preload="metadata")
-            source(src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4")
-    p.paragraph  Prevent long strings of text from breaking your components’ layout by using .text-break to set word-wrap: break-word and word-break: break-word. We use word-wrap instead of the more common overflow-wrap for wider browser support, and add the deprecated word-break: break-word to avoid issues with flex containers.
-    div.audio-container.container-fluid
-        audio.w-100(controls)
-            source(src="audio/let-it-go-12279.mp3")
-    p.paragraph  Prevent long strings of text from breaking your components’ layout by using .text-break to set word-wrap: break-word and word-break: break-word. We use word-wrap instead of the more common overflow-wrap for wider browser support, and add the deprecated word-break: break-word to avoid issues with flex containers.
-    div#embed-container.embed-container.container-fluid.w-100vw !{youtube}
-    div#embed-container.embed-container.container-fluid !{gist}
+    div.container-fluid
+        div.row.w-100
+            div.col-sm-12.col-md-8            
+                div.post.border.rounded.p-2
+                    h1.title #{title}
+                    div.avatar.d-flex
+                        img.me-2.p-1.border.rounded-circle(src="/images/avatar.jpeg" alt="avatar" width="50" loading="lazy" height="50"  )
+                        div.d-flex.flex-column
+                            span.author Nishu kumar
+                            span.time 20 Mar 2022
+                    hr.py-1
+                    h4.subtitle #{subtitle}
+                    each section in sections
+                        if(section.image)
+                            div.post-image.d-flex.pb-2
+                                img.img-fluid(src=section.image alt="post-image" loading="lazy")
+                        if(section.paragraph)
+                            p.paragraph #{section.paragraph}
+                        if(section.video)
+                            div.video-container(contextmenu="false")
+                                video.img-fluid.w-100(controls preload="metadata")
+                                    source(src=section.video type="video/mp4")
+                        if(section.audio)
+                            div.audio-container.container-fluid
+                                audio.w-100(controls)
+                                    source(src=section.audio)
+                        if(section.embed)
+                            div.embed-container.container-fluid !{section.embed}
+            div.col-sm-12.col-md-4
+                div.container.text-center.fs-6.bg-dark.text-light.rounded Latest Posts
+                include partials/post.pug 
+                include partials/post.pug 
