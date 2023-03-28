@@ -1,10 +1,11 @@
+import { Request, Response, NextFunction } from 'express';
 
-exports.HomePage = async (req, res, next) => {
+exports.HomePage = async (req: Request, res: Response, next: NextFunction) => {
     res.render("home")
 }
-exports.DetailPage = async (req, res, next) => {
+exports.DetailPage = async (req: Request, res: Response, next: NextFunction) => {
     let id = req.params.id
-    embeds = [
+    let embeds = [
         {
             embed: `<script src="https://gist.github.com/kumarnishu/1acfc36f0d11b4ba47da1f50f810c249.js"></script>`,
             paragraph: "Express is a node js web application framework that provides broad features for building web and mobile applications.Express is a node js web application framework that provides broad features for building web and mobile applications."
@@ -46,16 +47,4 @@ exports.DetailPage = async (req, res, next) => {
     res.render("post-detail", context)
 }
 
-exports.NewPost = async (req, res, next) => {
-    res.status(201).json({ message: "post created", body: req.body })
-}
-exports.UpdatePost = async (req, res, next) => {
-    res.render("home")
-}
-exports.DeletePost = async (req, res, next) => {
-    let id = req.params.id
-    res.render("post-detail")
-}
-exports.PublishToogle = async (req, res, next) => {
-    res.status(201).json({ message: "post created" })
-}
+

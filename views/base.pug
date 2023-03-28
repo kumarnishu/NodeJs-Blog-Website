@@ -10,7 +10,8 @@ html
     meta(property="og:title" content="Your Website Title")
     meta(property="og:description" content="Your description")
     meta(property="og:image" content="https://www.your-domain.com/path/image.jpg")
-  title #{title}
+  block title
+    title #{title}
   link(rel="stylesheet" href="/styles/base.css")
   link(rel="stylesheet" href="/styles/bootstrap.min.css")
   block css

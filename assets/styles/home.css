@@ -2,7 +2,8 @@ ul.breadcrumb {
     margin: 0.2rem;
     padding: 10px 16px;
     list-style: none;
-    background-color: rgb(244, 239, 239);;
+    background-color: rgb(244, 239, 239);
+    ;
 }
 
 ul.breadcrumb li {
@@ -34,10 +35,12 @@ ul.breadcrumb li a:hover {
 .logo .brand-name {
     color: white;
 }
-.img-fluid{
+
+.img-fluid {
     background-position: center;
     object-fit: cover;
 }
+
 .menu a {
     color: white;
     text-decoration: none;
@@ -82,12 +85,15 @@ ul.breadcrumb li a:hover {
 .mobile-menu {
     background-color: rgba(0, 0, 0, 0.8);
 }
-.read-more{
+
+.read-more {
     text-decoration: none;
 }
-.read-more:hover{
+
+.read-more:hover {
     font-weight: 600;
 }
+
 .mobile-menu a {
     display: block;
     width: 100%;
@@ -102,11 +108,13 @@ ul.breadcrumb li a:hover {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-.title,.subtitle{
+.title,
+.subtitle {
     word-break: break-all;
 }
+
 .about-us p {
-    word-break:break-all;
+    word-break: break-all;
     font-size: 1.1rem;
     font-weight: 400;
     word-spacing: 10;
@@ -181,6 +189,20 @@ ul.breadcrumb li a:hover {
 iframe {
     width: 100%;
     min-height: 300px;
+}
+
+.no-page-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    text-transform: uppercase;
+}
+.go-back {
+    display: block;
+    text-align: center;
+    text-decoration: none;
 }
 
 @media all and (max-width:450px) {

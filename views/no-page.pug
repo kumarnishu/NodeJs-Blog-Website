@@ -1,0 +1,13 @@
+extends base
+
+block title
+    title no page found
+block css 
+    link(rel="stylesheet" href="/styles/home.css")
+block base-content
+    div.container-fluid.no-page-container.p-2
+        img(src="/images/dog.png" alt="no-page-found")
+        div.text
+            h1.pb-2 SORRY ! This Page Not Exists
+            a.go-back.bg-dark.text-white.p-2.rounded(href="/") Go Back
+            
