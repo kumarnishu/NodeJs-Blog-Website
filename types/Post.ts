@@ -4,10 +4,10 @@ import { User } from "./User";
 
 export type Post = {
     _id?: string,
-    sections?: Section[],
+    sections: Section[],
+    author: User | Types.ObjectId,
+    is_published: Boolean
     created_at?: Date,
-    updated_at?: Date,
-    author?: User | Types.ObjectId,
-    is_published?: Boolean
+    updated_at?: Date
 }
 export type PostBody = Request['body'] & Post

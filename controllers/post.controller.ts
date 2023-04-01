@@ -1,9 +1,13 @@
 import { Request, Response, NextFunction } from 'express';
+import Post from '../models/Post';
+import Section from '../models/Section';
+import { SectionBody } from '../types/Section';
+import isMongoId from 'validator/lib/isMongoId';
 
-exports.HomePage = async (req: Request, res: Response, next: NextFunction) => {
+export const HomePage = async (req: Request, res: Response, next: NextFunction) => {
     res.render("home")
 }
-exports.DetailPage = async (req: Request, res: Response, next: NextFunction) => {
+export const DetailPage = async (req: Request, res: Response, next: NextFunction) => {
     let id = req.params.id
     let embeds = [
         {
@@ -47,4 +51,33 @@ exports.DetailPage = async (req: Request, res: Response, next: NextFunction) => 
     res.render("post-detail", context)
 }
 
-
+export const NewPost = async (req: Request, res: Response, next: NextFunction) => {
+    const post = new Post({
+        updated_at: new Date(Date.now()),
+        author: req.user
+    })
+    await post.save()
+    res.status(201).json(post)
+}
+export const CreateSection = async (req: Request, res: Response, next: NextFunction) => {
+    const { type, value } = req.body as SectionBody
+    if (!type || !value)
+        return res.status(400).json({ "message": "fill all required fields" })
+    const post_id = req.params.id
+    if (!post_id)
+        return res.status(400).json({ "message": "please provide valid post id" })
+    if (!isMongoId(post_id))
+        return res.status(400).json({ "message": "not a valid post id" })
+    const post = await Post.findById(post_id)
+    if (!post)
+        return res.status(400).json({ "message": "this post not exists" })
+    const section = new Section({
+        type: type,
+        value: value,
+        updated_at: new Date(Date.now()),
+        post: post
+    })
+    section.author=req.user
+    await section.save()
+    res.status(201).json(section)
+}

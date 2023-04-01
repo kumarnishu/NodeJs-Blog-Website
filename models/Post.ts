@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Types } from "mongoose";
 import { Post } from "../types/Post";
 
 const PostSchema = new mongoose.Schema<Post, mongoose.Model<Post>>({
@@ -20,6 +20,11 @@ const PostSchema = new mongoose.Schema<Post, mongoose.Model<Post>>({
         default: new Date(Date.now()),
         required: true,
 
+    },
+    author: {
+        ref: 'User',
+        type: Types.ObjectId,
+        required: true
     }
 })
 
