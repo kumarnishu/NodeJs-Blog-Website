@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm install && tsc",
     "start": "tsc && node dist/app.js",
-    "dev": "concurrently \" tsc --watch\" \" nodemon dist/app.js\" \"cd app && npm run dev \" ",
+    "dev": "concurrently \" tsc --watch\" \" nodemon dist/app.js\" \"cd app && npm start \" ",
     "server": "concurrently \" tsc --watch\" \" nodemon dist/app.js\" "
   },
   "keywords": [],

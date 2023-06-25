@@ -1,6 +1,4 @@
-import { Types } from "mongoose"
-import { User } from "./User"
-import { Post } from "./Post"
+import { Asset } from "./Asset"
 
 export type SectionType = "heading" | "title" | "paragraph" | "image" | "audio" | "video" | "embed" | "link" | "divider"
 
@@ -8,10 +6,8 @@ export type Section =
     {
         _id?: string,
         type: SectionType,
-        value: string,
+        value: string | Asset,
         is_published: Boolean,
-        post:Post|Types.ObjectId,
-        author: User | Types.ObjectId
         created_at?: Date,
         updated_at?: Date
     }

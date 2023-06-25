@@ -1,5 +1,3 @@
-import { Asset } from "./Asset"
-
 export type User = {
     _id?: string,
     username: string,

@@ -1,4 +1,4 @@
-import mongoose, { Types } from "mongoose";
+import mongoose from "mongoose";
 import { Section } from "../types/Section";
 
 const SectionSchema = new mongoose.Schema<Section, mongoose.Model<Section>>({
@@ -16,16 +16,6 @@ const SectionSchema = new mongoose.Schema<Section, mongoose.Model<Section>>({
         default: new Date(Date.now()),
         required: true,
 
-    },
-    author: {
-        ref: 'User',
-        type: Types.ObjectId,
-        required: true
-    },
-    post: {
-        ref: 'Post',
-        type: Types.ObjectId,
-        required: true
     }
 })
 

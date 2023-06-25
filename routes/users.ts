@@ -4,7 +4,7 @@ import { isAuthenticatedUser } from "../middlewares/auth.middleware";
 
 const router = express.Router()
 
-router.post("/users",Signup)
+router.post("/signup",Signup)
 router.route("/update/password").patch(isAuthenticatedUser, updatePassword)
 router.post("/login", Login)
 router.post("/logout", Logout)
@@ -14,3 +14,5 @@ router.post("/password/reset", SendPasswordResetMail)
 router.patch("/password/reset/:token", ResetPassword)
 
 export default router;
+
+

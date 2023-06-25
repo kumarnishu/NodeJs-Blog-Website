@@ -1,12 +1,13 @@
-import React from 'react'
-import HomePage from './pages/HomePage'
+import { useContext } from "react";
+import { PostContext, SectionTypes } from "./contexts/PostContext";
+import CreatePost from "./components/CreatePost";
+import EditPost from "./components/EditPost";
 
-function App() {
+export default function App() {
+  const { post } = useContext(PostContext)
   return (
     <>
-    <HomePage/>
+      {post.length === 0 ? <CreatePost/> : <EditPost />}
     </>
   )
 }
-
-export default App
